@@ -379,7 +379,7 @@ summary {
 <h3>Also consider</h3>
 <ul>
 <li>Consider <a href="https://lost-stats.github.io/Model_Estimation/fixed_effects_in_linear_regression.html">Fixed effects</a> if unobserved heterogeneity and independent variables are correlated.</li>
-<li><a href="https://en.wikipedia.org/wiki/Durbin%E2%80%93Wu%E2%80%93Hausman_test">Hauman Tests</a> are often used to inform us about the appropiateness of random effects versus fixed effects models.</li>
+<li><a href="https://en.wikipedia.org/wiki/Durbin%E2%80%93Wu%E2%80%93Hausman_test">Hausman Tests</a> are often used to inform us about the appropiateness of random effects versus fixed effects models.</li>
 <li><a href="https://lost-stats.github.io/Model_Estimation/Nonstandard_Errors/clustered_se.html">Clustering your error</a></li>
 </ul>
 </div>
@@ -387,7 +387,7 @@ summary {
 <div id="implementations" class="section level1">
 <h1>Implementations</h1>
 <p>We continue from our the example in <a href="https://lost-stats.github.io/Model_Estimation/fixed_effects_in_linear_regression.html">Fixed effects</a>. In that example we estimated a fixed effect model of the form:</p>
-<p><span class="math display">\[ earnings_{it} = \beta_0 + \beta_1 prop\_ working_{it} + \delta_t + \delta_i + \epsilon_{it}\]</span> That is average earnings of graduates of an institution depends on proportion employed, after controlling for time and institution fixed effects. But, some institutions have one observations, and the average number of observations is 5.1. We may be worried about the precision of our estimates. So, we may choose to use random effects for intercepts by institution to estimate the model even if we think <span class="math inline">\(corr(prop\_ working_{it}, \delta_{i}) \ne 0\)</span>. That is, we choose possiblity of bias over variance.</p>
+<p><span class="math display">\[ earnings_{it} = \beta_0 + \beta_1 prop\_ working_{it} + \delta_t + \delta_i + \epsilon_{it}\]</span> That is average earnings of graduates of an institution depends on proportion employed, after controlling for time and institution fixed effects. But, some institutions have just one observation, and the average number of observations is 5.1. We may be worried about the precision of our estimates. So, we may choose to use random effects model even if we think <span class="math inline">\(corr(prop\_ working_{it}, \delta_{i}) \ne 0\)</span>. That is, we choose possiblity of bias over variance.</p>
 <div id="r" class="section level2">
 <h2>R</h2>
 <p>Several packages can be used to implement a random effects model in R - such as <a href="https://cran.r-project.org/web/packages/lme4/index.html">lme4</a> and <a href="https://cran.r-project.org/web/packages/nlme/nlme.pdf">nlme</a>. lme4 is more widely used. The example that follows uses the lme4 package.</p>
